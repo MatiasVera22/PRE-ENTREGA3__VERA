@@ -4,6 +4,8 @@
 
 @media only screen and (min-width: 760px) {
   .div__body {
+    width: auto;
+    height: auto;
     display: grid;
     grid-template-rows: 70px auto 70px;
     grid-template-areas: "header" "body" "footer"; }
@@ -70,8 +72,8 @@
     justify-content: center;
     align-items: center; }
   .producto__main-sec--item {
-    width: 90%;
-    height: 90%;
+    width: 60%;
+    height: 60%;
     display: grid;
     grid-template-rows: 90% 10%;
     grid-template-areas: "foto" "precio"; }
@@ -80,6 +82,9 @@
     width: 100%;
     overflow: hidden;
     grid-area: foto; }
+  .producto__main-sec--item:hover {
+    width: 80%;
+    height: 80%; }
   .item__texto {
     display: flex;
     flex-direction: row;
@@ -92,9 +97,14 @@
     margin: 0; }
   /*CSS ITEMS ----------------------*/
   .main__item1_3 {
+    height: auto;
+    flex-direction: row;
+    justify-content: center;
+    max-width: 1184px;
     display: grid;
-    grid-template-rows: 470px 470px;
-    grid-template-areas: "img" "info"; }
+    grid-template-columns: 30% auto;
+    grid-template-rows: 100%;
+    grid-template-areas: "img info" "img2 info2"; }
   .separador {
     width: 100%;
     height: 20px;
@@ -120,35 +130,25 @@
     display: flex;
     flex-direction: row;
     justify-content: center; }
-    .info__item1_3 .info__item1_3-elementos {
-      height: 90%;
-      width: 90%;
-      display: grid;
-      grid-template-rows: 50px 50px 50px 50px auto;
-      grid-template-areas: "precio" "medio_de_pago" "envio"    "boton"; }
-      .info__item1_3 .info__item1_3-elementos .elemento1_3-a {
-        grid-area: precio;
-        font-size: 40px; }
-      .info__item1_3 .info__item1_3-elementos .elemento1_3 {
-        grid-area: medio_de_pago envio;
-        display: flex;
-        flex-direction: column;
-        justify-content: center;
-        align-items: flex-start;
-        font-size: 25px; }
-      .info__item1_3 .info__item1_3-elementos .elemento1_3-btn {
-        grid-area: boton;
-        width: 100%;
-        background-color: blue;
-        border-radius: 10px;
-        color: white;
-        font-size: 20px; }
-  .footer__item1_3 {
-    height: 70px;
-    background-color: violet; } }
+  .info__item1_3-elementos {
+    grid-area: info;
+    height: 90%;
+    width: 90%;
+    display: grid;
+    grid-template-rows: 50px 50px 50px 50px auto;
+    grid-template-areas: "precio" "medio_de_pago" "envio"    "boton"; } }
+
+.footer__item1_3 {
+  height: 70px;
+  background-color: violet;
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+  /*CSS PAGINAS----------------*/ }
 
 @media only screen and (max-width: 760px) {
   .div__body {
+    height: 100%;
     display: grid;
     grid-template-rows: 70px 800px 70px;
     grid-template-areas: "header" "body" "footer"; }
@@ -215,8 +215,8 @@
     justify-content: center;
     align-items: center; }
   .producto__main-sec--item {
-    width: 90%;
-    height: 90%;
+    width: 60%;
+    height: 60%;
     display: grid;
     grid-template-rows: 90% 10%;
     grid-template-areas: "foto" "precio"; }
@@ -233,8 +233,8 @@
   .footer__main {
     grid-area: footer;
     background-color: violet;
-    padding: 0;
-    margin: 0; }
+    width: 100%;
+    height: 70px; }
   /*CSS ITEMS ----------------------*/
   .main__item1_3 {
     display: grid;
@@ -284,8 +284,112 @@
       background-color: blue;
       border-radius: 10px;
       color: white;
-      font-size: 20px; } }
+      font-size: 20px; }
+  /*CSS PAGINAS-------------------*/
+  /*CSS PAGINA PRODUCTOS*/
+  .div__body-pagina_productos {
+    margin-top: 20px;
+    margin-bottom: 20px;
+    flex-direction: row;
+    justify-content: center;
+    display: grid;
+    width: auto;
+    height: auto;
+    grid-template-columns: 20% 50%;
+    grid-template-rows: repeat(6, 1fr);
+    gap: 20px;
+    grid-template-areas: "a b"  "c d" "e f" "g h" "i j" "k l"; }
+  .pagina__productos-item--info {
+    grid-area: b d f h j l; }
+  .pagina__productos-item--img {
+    overflow: hidden; }
+  .footer__productos {
+    background-color: violet;
+    width: 100%;
+    height: 60px; } }
 
-.footer__item1_3 {
-  height: 70px;
-  background-color: violet; }
+@media only screen and (min-width: 760px) {
+  .div__body-pagina_productos {
+    margin-left: 30px;
+    margin-right: 30px;
+    margin-top: 20px;
+    margin-bottom: 20px;
+    flex-direction: row;
+    justify-content: center;
+    display: grid;
+    width: auto;
+    height: auto;
+    grid-template-columns: 20% 30%;
+    grid-template-rows: repeat(6, 300px);
+    gap: 20px;
+    grid-template-areas: "a b"  "c d" "e f" "g h" "i j" "k l"; }
+  .pagina__productos-item--info {
+    grid-area: b d f h j l; }
+  .pagina__productos-item--img {
+    overflow: hidden; }
+  .footer__productos {
+    background-color: violet;
+    width: 100%;
+    height: 60px; } }
+
+/*FIN DE CSS PAGINA PRODUCTOS*/
+/*CSS PAGINA NOTICIAS*/
+@media only screen and (min-width: 760px) {
+  .main__body-noticias {
+    display: grid;
+    flex-direction: row;
+    justify-content: center;
+    width: auto;
+    height: 100%;
+    grid-template-columns: 20% 20% 20% 20%;
+    grid-template-rows: repeat(2, 500px);
+    gap: 20px;
+    grid-template-areas: "a b c d" "e f g h"; }
+    .main__body-noticias .tarjeta-a {
+      width: 100%;
+      height: auto;
+      grid-area: a; }
+    .main__body-noticias .tarjeta-c {
+      grid-area: c; }
+    .main__body-noticias .tarjeta-e {
+      grid-area: e; }
+    .main__body-noticias .tarjeta-g {
+      grid-area: g; }
+    .main__body-noticias .parrafo-b {
+      grid-area: b; }
+    .main__body-noticias .parrafo-d {
+      grid-area: d; }
+    .main__body-noticias .parrafo-f {
+      grid-area: f; }
+    .main__body-noticias .parrafo-h {
+      grid-area: h; } }
+
+@media only screen and (max-width: 760px) {
+  .main__body-noticias {
+    display: grid;
+    flex-direction: row;
+    justify-content: center;
+    width: auto;
+    height: 100%;
+    grid-template-columns: 80%;
+    grid-template-rows: repeat(8, auto);
+    gap: 20px;
+    grid-template-areas: "a"  "b"  "c"  "d" "e" "f"  "g" "h"; }
+    .main__body-noticias .tarjeta-a {
+      width: 100%;
+      height: auto;
+      grid-area: a; }
+    .main__body-noticias .tarjeta-c {
+      grid-area: c; }
+    .main__body-noticias .tarjeta-e {
+      grid-area: e; }
+    .main__body-noticias .tarjeta-g {
+      grid-area: g; }
+    .main__body-noticias .parrafo-b {
+      grid-area: b; }
+    .main__body-noticias .parrafo-d {
+      grid-area: d; }
+    .main__body-noticias .parrafo-f {
+      grid-area: f; }
+    .main__body-noticias .parrafo-h {
+      grid-area: h; } }
